@@ -45,7 +45,7 @@ namespace DotImaging
         public static string NamedPipeFromFileName(this string fileName, string namedPipeName = "filePipe", Func<float, bool> onProgress = null)
         {
             if (File.Exists(fileName))
-                throw new ArgumentException("The provided file does not exist.", nameof(fileName));
+                throw new ArgumentException("The provided file does not exist.", "fileName");
 
             Stream source = File.OpenRead(fileName);
 
@@ -125,7 +125,7 @@ namespace DotImaging
         public static string NamedPipeFromStreamAsync(this Stream source, string namedPipeName, Func<float, bool> onProgress = null, Action onFinish = null)
         {
             if (source == null)
-                new ArgumentNullException(nameof(source));
+                new ArgumentNullException("source");
 
             Task.Factory.StartNew(() =>
             {

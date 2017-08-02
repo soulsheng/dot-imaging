@@ -196,7 +196,7 @@ namespace DotImaging.Linq
                 second.Width() < area.Right || second.Height() < area.Bottom ||
                 area.Left < 0 || area.Top < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(area), "The specified area must be witihin the images.");
+                throw new ArgumentOutOfRangeException("area", "The specified area must be witihin the images.");
             }
 
             for (int row = area.Top; row < area.Bottom; row++)
